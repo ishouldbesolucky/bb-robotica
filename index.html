@@ -9,7 +9,8 @@
         :root { --primary: #6366f1; --accent: #22d3ee; --bg: #030712; }
         body {
             font-family: 'Inter', sans-serif;
-            background: radial-gradient(circle at center, rgba(3, 7, 18, 0) 0%, rgba(3, 7, 18, 0.85) 100%), 
+            /* Herstelde gradient: Donkerder aan de randen (0.9) voor maximale leesbaarheid van de witte tekst */
+            background: radial-gradient(circle at center, rgba(3, 7, 18, 0.4) 0%, rgba(3, 7, 18, 0.9) 100%), 
                         url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1600');
             background-size: cover; background-position: center; background-attachment: fixed;
             color: white; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
@@ -19,7 +20,7 @@
         .hero-text p.lead { font-size: 1.4rem; color: #f8fafc; margin-bottom: 35px; border-left: 5px solid var(--primary); padding-left: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .highlight { color: var(--accent); }
         .triggers { list-style: none; padding: 0; margin-bottom: 30px; }
-        .triggers li { margin-bottom: 18px; font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; }
+        .triggers li { margin-bottom: 18px; font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
         .triggers li::before { content: '⚡'; margin-right: 15px; color: var(--accent); }
         
         .form-card { background: rgba(15, 23, 42, 0.98); padding: 40px; border-radius: 12px; border: 2px solid var(--primary); box-shadow: 0 0 60px rgba(99, 102, 241, 0.4); height: fit-content; align-self: start; }
@@ -29,9 +30,9 @@
         .cta-btn { width: 100%; padding: 22px; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 900; font-size: 1.4rem; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
         .cta-btn:hover { background: #4f46e5; box-shadow: 0 0 20px var(--primary); }
 
-        /* Statistiek blokken verbeterde uitlijning */
-        .stat-group { display: flex; gap: 15px; margin-top: 40px; justify-content: space-between; }
-        .stat { background: rgba(0,0,0,0.8); padding: 20px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); flex: 1; text-align: center; }
+        /* Statistiek blokken met vaste breedte en uitlijning */
+        .stat-group { display: flex; gap: 15px; margin-top: 40px; justify-content: flex-start; }
+        .stat { background: rgba(0,0,0,0.85); padding: 20px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); flex: 0 1 200px; text-align: center; }
         .stat span { display: block; font-weight: 900; font-size: 1.7rem; color: var(--accent); line-height: 1.2; }
         .stat label { font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; display: block; margin-top: 5px; }
 
@@ -39,7 +40,7 @@
             .container { grid-template-columns: 1fr; text-align: center; } 
             .triggers li { justify-content: center; } 
             .stat-group { flex-direction: column; align-items: center; }
-            .stat { width: 100%; max-width: 300px; }
+            .stat { width: 100%; max-width: 350px; flex: initial; }
         }
     </style>
 </head>
@@ -56,7 +57,7 @@
         <div class="stat-group">
             <div class="stat"><span>$248 MRD</span><label>Marktomvang 2033</label></div>
             <div class="stat"><span>$7 BILJOEN</span><label>Marktpotentieel</label></div>
-            <div class="stat"><span>+863%</span><label>Verwachte Omzetgroei</label></div>
+            <div class="stat"><span>863%</span><label>Verwachte Omzetgroei</label></div>
         </div>
     </div>
     <div class="form-card">
